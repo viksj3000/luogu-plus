@@ -1,0 +1,1264 @@
+/* ==========================================================================
+   LuoguDark — luogu-dark.css
+   Exhaustive 35-Section Pure Pitch OLED Black (#000000) Site Stylesheet
+   All rules scoped under html.luogudark-active for instant toggle
+   ========================================================================== */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 1: CSS Custom Properties / Design Tokens
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active {
+  --ld-bg-deepest: #191919;
+  --ld-bg-base: #191919;
+  --ld-bg-page: #191919;
+  --ld-bg-card: rgba(34, 34, 34, 0.95);
+  --ld-bg-card-solid: #222222;
+  --ld-bg-elevated: #2a2a2a;
+  --ld-bg-input: #1e1e1e;
+  --ld-bg-code: #141414;
+  --ld-bg-hover: rgba(82, 196, 26, 0.14);
+
+  --ld-text-primary: #e4e4e7;
+  --ld-text-secondary: #a1a1aa;
+  --ld-text-muted: #71717a;
+  --ld-text-heading: #ffffff;
+  --ld-text-inverse: #000000;
+
+  --ld-border: #333333;
+  --ld-border-light: rgba(255, 255, 255, 0.08);
+  --ld-border-accent: rgba(82, 196, 26, 0.3);
+
+  --ld-accent: #52c41a;
+  --ld-accent-hover: #73d13d;
+  --ld-accent-dim: rgba(82, 196, 26, 0.2);
+
+  --ld-danger: #f48771;
+  --ld-warning: #cca700;
+  --ld-info: #75beff;
+  --ld-success: #89d185;
+
+  color-scheme: dark;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 2: Core Framework & Base Layout
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active,
+html.luogudark-active body {
+  background-color: var(--ld-bg-deepest) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active #app,
+html.luogudark-active #app.lfe-body,
+html.luogudark-active .lfe-body,
+html.luogudark-active .theme-page,
+html.luogudark-active .theme-page.theme-frosted {
+  background-color: var(--ld-bg-base) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .main-container,
+html.luogudark-active .mobile-body {
+  background-color: var(--ld-bg-base) !important;
+}
+
+/* Frosted glass overlays */
+html.luogudark-active .theme-page.theme-frosted::before,
+html.luogudark-active .theme-page.theme-frosted::after {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 3: Navigation, Headers & Top Bar
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active header,
+html.luogudark-active nav,
+html.luogudark-active .top-bar,
+html.luogudark-active .header-layout,
+html.luogudark-active .header-layout.tiny,
+html.luogudark-active .wrapper.wrapped.lfe-body.header-layout.tiny,
+html.luogudark-active .lfe-header,
+html.luogudark-active .mobile-header,
+html.luogudark-active .mobile-nav {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .sidebar,
+html.luogudark-active .breadcrumb {
+  background-color: var(--ld-bg-card-solid) !important;
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .breadcrumb a {
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .breadcrumb a:hover {
+  color: var(--ld-accent) !important;
+}
+
+/* Navigation links */
+html.luogudark-active nav a,
+html.luogudark-active .top-bar a,
+html.luogudark-active .header-layout a,
+html.luogudark-active .lfe-header a {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active nav a:hover,
+html.luogudark-active .top-bar a:hover,
+html.luogudark-active .header-layout a:hover {
+  color: var(--ld-accent) !important;
+}
+
+/* User dropdown in header */
+html.luogudark-active .user-nav,
+html.luogudark-active .user-nav-item,
+html.luogudark-active .dropdown-toggle {
+  color: var(--ld-text-primary) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 4: Cards & Panels
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .l-card,
+html.luogudark-active .lfe-card {
+  background-color: var(--ld-bg-card-solid) !important;
+  border: 1px solid var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.luogudark-active .l-card::before {
+  display: none !important;
+}
+
+html.luogudark-active .count,
+html.luogudark-active .title.no-wrap,
+html.luogudark-active .stat-text.value,
+html.luogudark-active .stat-text.name {
+  color: var(--ld-text-heading) !important;
+}
+
+html.luogudark-active .header-card {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .problem,
+html.luogudark-active .lg-article {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .am-panel,
+html.luogudark-active .am-panel-bd,
+html.luogudark-active .am-panel-hd,
+html.luogudark-active .am-panel-primary,
+html.luogudark-active .am-panel.lg-index-contest {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .am-panel-hd {
+  border-bottom: 1px solid var(--ld-border) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 5: Homepage Widgets & AmazeUI Grid
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .lg-index-stat,
+html.luogudark-active .lg-index-benben,
+html.luogudark-active .lg-right {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .am-g,
+html.luogudark-active .am-u-lg-3,
+html.luogudark-active .am-u-md-4,
+html.luogudark-active .am-u-lg-9,
+html.luogudark-active .am-u-md-8 {
+  background-color: transparent !important;
+}
+
+html.luogudark-active #feed-content {
+  background-color: var(--ld-bg-base) !important;
+}
+
+html.luogudark-active .am-comments-list,
+html.luogudark-active .am-comments-list-flip {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .am-comment {
+  border-bottom: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .am-comment-main {
+  background-color: var(--ld-bg-card-solid) !important;
+  border: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .am-comment-main::after {
+  border-right-color: var(--ld-bg-card-solid) !important;
+}
+
+html.luogudark-active .am-comment-bd {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .am-comment-hd {
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .lg-inline-up {
+  background-color: var(--ld-bg-card-solid) !important;
+}
+
+html.luogudark-active .am-btn.am-btn-danger.am-btn-sm {
+  background-color: rgba(244, 135, 113, 0.15) !important;
+  border-color: var(--ld-danger) !important;
+  color: var(--ld-danger) !important;
+}
+
+/* Punch-in / Check-in Widget (.lg-punch) */
+html.luogudark-active .lg-punch,
+html.luogudark-active .am-u-md-4.lg-punch {
+  background-color: var(--ld-bg-card-solid) !important;
+  border: 1px solid var(--ld-border) !important;
+  border-radius: 8px !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .lg-punch *,
+html.luogudark-active .lg-punch p,
+html.luogudark-active .lg-punch span,
+html.luogudark-active .lg-punch div,
+html.luogudark-active .lg-punch h1,
+html.luogudark-active .lg-punch h2,
+html.luogudark-active .lg-punch h3,
+html.luogudark-active .lg-punch h4,
+html.luogudark-active .lg-punch strong {
+  color: var(--ld-text-primary) !important;
+}
+
+/* Punch button / status button */
+html.luogudark-active .lg-punch .am-btn,
+html.luogudark-active .lg-punch button,
+html.luogudark-active .lg-punch #checkin,
+html.luogudark-active .lg-punch .lg-punch-btn {
+  background-color: var(--ld-accent) !important;
+  color: var(--ld-text-inverse) !important;
+  border-color: var(--ld-accent) !important;
+  font-weight: 600 !important;
+}
+
+html.luogudark-active .lg-punch .am-btn:hover,
+html.luogudark-active .lg-punch button:hover {
+  background-color: var(--ld-accent-hover) !important;
+}
+
+/* Luck status / streak highlights */
+html.luogudark-active .lg-punch .lg-fg-green,
+html.luogudark-active .lg-punch .lg-fg-blue,
+html.luogudark-active .lg-punch .lg-punch-result {
+  color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 6: Markdown & Problem Statement Content
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .lfe-marked-wrap,
+html.luogudark-active .lfe-marked,
+html.luogudark-active .marked,
+html.luogudark-active .problem-statement,
+html.luogudark-active .problem-content {
+  background-color: var(--ld-bg-card-solid) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .io-sample-block {
+  background-color: var(--ld-bg-code) !important;
+  border: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .lfe-code,
+html.luogudark-active pre,
+html.luogudark-active code {
+  background-color: var(--ld-bg-code) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+/* Inline code */
+html.luogudark-active .lfe-marked code,
+html.luogudark-active .marked code,
+html.luogudark-active p code {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-accent) !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  border: 1px solid var(--ld-border) !important;
+}
+
+/* Code blocks inside pre should reset */
+html.luogudark-active pre code {
+  background-color: transparent !important;
+  color: var(--ld-text-primary) !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+html.luogudark-active blockquote {
+  background-color: var(--ld-bg-elevated) !important;
+  border-left: 4px solid var(--ld-accent) !important;
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .copy-btn,
+html.luogudark-active .run-btn {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .copy-btn:hover,
+html.luogudark-active .run-btn:hover {
+  background-color: var(--ld-accent-dim) !important;
+  color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 7: Tables
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active table {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active th {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-heading) !important;
+}
+
+html.luogudark-active td {
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active thead {
+  background-color: var(--ld-bg-elevated) !important;
+}
+
+html.luogudark-active tbody tr:hover {
+  background-color: var(--ld-bg-hover) !important;
+}
+
+html.luogudark-active tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 8: Forms, Inputs & Filter Controls
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active input,
+html.luogudark-active textarea,
+html.luogudark-active select {
+  background-color: var(--ld-bg-input) !important;
+  color: var(--ld-text-primary) !important;
+  border: 1px solid var(--ld-border) !important;
+  caret-color: var(--ld-accent) !important;
+}
+
+html.luogudark-active input:focus,
+html.luogudark-active textarea:focus,
+html.luogudark-active select:focus {
+  border-color: var(--ld-accent) !important;
+  box-shadow: 0 0 0 2px var(--ld-accent-dim) !important;
+  outline: none !important;
+}
+
+html.luogudark-active input::placeholder,
+html.luogudark-active textarea::placeholder {
+  color: var(--ld-text-muted) !important;
+}
+
+html.luogudark-active option {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .refined-input.search-text,
+html.luogudark-active .text.lform-size-small,
+html.luogudark-active .text.lform-size-middle {
+  background-color: var(--ld-bg-input) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .block-item.tag-button,
+html.luogudark-active .toggle-tag {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-secondary) !important;
+  border: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .block-item.tag-button:hover,
+html.luogudark-active .toggle-tag:hover {
+  background-color: var(--ld-accent-dim) !important;
+  border-color: var(--ld-accent) !important;
+  color: var(--ld-accent) !important;
+}
+
+html.luogudark-active .block-item.tag-button.active,
+html.luogudark-active .toggle-tag.active {
+  background-color: var(--ld-accent-dim) !important;
+  border-color: var(--ld-accent) !important;
+  color: var(--ld-accent) !important;
+  box-shadow: 0 0 8px var(--ld-accent-dim) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 9: Discussion & Forum Pages
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .comment,
+html.luogudark-active .reply-item,
+html.luogudark-active .feed-item {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .comment-body,
+html.luogudark-active .reply-info {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .comment-header,
+html.luogudark-active .comment .author,
+html.luogudark-active .reply-item .author {
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .discuss-list-item {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-bottom: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .discuss-list-item:hover {
+  background-color: var(--ld-bg-hover) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 10: Profiles, User Stats & Heatmaps
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .user-header-bottom {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .user-stat,
+html.luogudark-active .user-info {
+  background-color: var(--ld-bg-card-solid) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+/* Contribution heatmap */
+html.luogudark-active .heat-map-cell {
+  stroke: var(--ld-border) !important;
+}
+
+html.luogudark-active .heatmap rect[fill="#ebedf0"],
+html.luogudark-active .heatmap rect[fill="#EBEDF0"] {
+  fill: var(--ld-bg-elevated) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 11: Buttons & Interactive Elements
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .btn,
+html.luogudark-active .am-btn,
+html.luogudark-active button {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .btn:hover,
+html.luogudark-active .am-btn:hover,
+html.luogudark-active button:hover {
+  background-color: var(--ld-accent-dim) !important;
+  border-color: var(--ld-accent) !important;
+  color: var(--ld-accent) !important;
+}
+
+/* Primary / Green buttons keep their accent color */
+html.luogudark-active .btn-primary,
+html.luogudark-active .am-btn-primary,
+html.luogudark-active .btn-success,
+html.luogudark-active .am-btn-success {
+  background-color: var(--ld-accent) !important;
+  color: var(--ld-text-inverse) !important;
+  border-color: var(--ld-accent) !important;
+}
+
+html.luogudark-active .btn-primary:hover,
+html.luogudark-active .am-btn-primary:hover,
+html.luogudark-active .btn-success:hover,
+html.luogudark-active .am-btn-success:hover {
+  background-color: var(--ld-accent-hover) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 12: Pagination & Layout Thrashing Fix
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .bottom-wrap,
+html.luogudark-active .bottom-wrap.float {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-top: 1px solid var(--ld-border) !important;
+  transition: none !important;
+}
+
+html.luogudark-active .pagination button {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .pagination button:hover {
+  background-color: var(--ld-accent-dim) !important;
+  color: var(--ld-accent) !important;
+}
+
+html.luogudark-active .pagination button.active,
+html.luogudark-active .pagination .active button {
+  background-color: var(--ld-accent) !important;
+  color: var(--ld-text-inverse) !important;
+  border-color: var(--ld-accent) !important;
+}
+
+/* ── CRITICAL: Transition Property Isolation ──
+   Prevents layout thrashing / scroll shaking on sticky pagination */
+html.luogudark-active .bottom-wrap *,
+html.luogudark-active .pagination *,
+html.luogudark-active .main-container * {
+  transition-property: background-color, color, border-color !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 13: Dropdowns, Modals & Popovers
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .dropdown,
+html.luogudark-active .dropdown-menu,
+html.luogudark-active .dropdown-target,
+html.luogudark-active .popup,
+html.luogudark-active .popup-content,
+html.luogudark-active .popup-wrapper,
+html.luogudark-active .popup-container {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.luogudark-active .dropdown-item,
+html.luogudark-active .dropdown-menu a,
+html.luogudark-active .dropdown-menu li {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .dropdown-item:hover,
+html.luogudark-active .dropdown-menu a:hover {
+  background-color: var(--ld-bg-hover) !important;
+  color: var(--ld-accent) !important;
+}
+
+html.luogudark-active .modal,
+html.luogudark-active .modal-content,
+html.luogudark-active .am-modal,
+html.luogudark-active .am-modal-bd,
+html.luogudark-active .am-modal-hd {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .modal-backdrop,
+html.luogudark-active .am-dimmer {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+html.luogudark-active .popover,
+html.luogudark-active .tooltip,
+html.luogudark-active .tippy-box,
+html.luogudark-active .tippy-content {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 14: Custom Scrollbars
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+html.luogudark-active ::-webkit-scrollbar-track {
+  background: var(--ld-bg-deepest) !important;
+}
+
+html.luogudark-active ::-webkit-scrollbar-thumb {
+  background: #333333 !important;
+  border-radius: 4px !important;
+}
+
+html.luogudark-active ::-webkit-scrollbar-thumb:hover {
+  background: #555555 !important;
+}
+
+html.luogudark-active ::-webkit-scrollbar-corner {
+  background: var(--ld-bg-deepest) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 15: Badges, Tags & Difficulty Labels
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .lg-tag,
+html.luogudark-active .lfe-tag {
+  background-color: var(--ld-bg-elevated) !important;
+  color: var(--ld-text-secondary) !important;
+  border: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active .lg-tag:hover,
+html.luogudark-active .lfe-tag:hover {
+  background-color: var(--ld-accent-dim) !important;
+  color: var(--ld-accent) !important;
+}
+
+/* Preserve difficulty badge colors but darken backgrounds */
+html.luogudark-active .lg-difficulty-color-0 { background-color: rgba(191, 191, 191, 0.15) !important; color: #bfbfbf !important; }
+html.luogudark-active .lg-difficulty-color-1 { background-color: rgba(254, 76, 97, 0.15) !important; color: #fe4c61 !important; }
+html.luogudark-active .lg-difficulty-color-2 { background-color: rgba(243, 156, 17, 0.15) !important; color: #f39c11 !important; }
+html.luogudark-active .lg-difficulty-color-3 { background-color: rgba(255, 193, 22, 0.15) !important; color: #ffc116 !important; }
+html.luogudark-active .lg-difficulty-color-4 { background-color: rgba(82, 196, 26, 0.15) !important; color: #52c41a !important; }
+html.luogudark-active .lg-difficulty-color-5 { background-color: rgba(52, 152, 219, 0.15) !important; color: #3498db !important; }
+html.luogudark-active .lg-difficulty-color-6 { background-color: rgba(155, 89, 182, 0.15) !important; color: #9b59b6 !important; }
+html.luogudark-active .lg-difficulty-color-7 { background-color: rgba(14, 29, 105, 0.25) !important; color: #8e8cd8 !important; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 16: Links & Anchors
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active a {
+  color: var(--ld-info) !important;
+}
+
+html.luogudark-active a:hover {
+  color: var(--ld-accent) !important;
+}
+
+/* Don't override colored difficulty links */
+html.luogudark-active a[class*="lg-difficulty-color-"] {
+  color: inherit !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 17: Headings & Typography
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active h1,
+html.luogudark-active h2,
+html.luogudark-active h3,
+html.luogudark-active h4,
+html.luogudark-active h5,
+html.luogudark-active h6 {
+  color: var(--ld-text-heading) !important;
+}
+
+html.luogudark-active .problem h2 {
+  border-bottom: 1px solid var(--ld-border) !important;
+}
+
+html.luogudark-active hr {
+  border-color: var(--ld-border) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 18: Alerts, Toasts & Notifications
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .am-alert,
+html.luogudark-active .alert,
+html.luogudark-active .notification {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .am-alert-success,
+html.luogudark-active .alert-success {
+  background-color: rgba(137, 209, 133, 0.1) !important;
+  border-color: var(--ld-success) !important;
+  color: var(--ld-success) !important;
+}
+
+html.luogudark-active .am-alert-danger,
+html.luogudark-active .alert-danger {
+  background-color: rgba(244, 135, 113, 0.1) !important;
+  border-color: var(--ld-danger) !important;
+  color: var(--ld-danger) !important;
+}
+
+html.luogudark-active .am-alert-warning,
+html.luogudark-active .alert-warning {
+  background-color: rgba(204, 167, 0, 0.1) !important;
+  border-color: var(--ld-warning) !important;
+  color: var(--ld-warning) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 19: Loading States & Spinners
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .loading-mask,
+html.luogudark-active .loading-overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+html.luogudark-active .spinner,
+html.luogudark-active .loading-spinner {
+  border-color: var(--ld-border) !important;
+  border-top-color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 20: User Menus & Account Dropdowns
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .user-menu,
+html.luogudark-active .account-dropdown {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .user-menu a,
+html.luogudark-active .account-dropdown a {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .user-menu a:hover,
+html.luogudark-active .account-dropdown a:hover {
+  background-color: var(--ld-bg-hover) !important;
+  color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 21: Sidebar Navigation
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .sidebar-nav,
+html.luogudark-active .side-menu {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .sidebar-nav a,
+html.luogudark-active .side-menu a {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .sidebar-nav a:hover,
+html.luogudark-active .side-menu a:hover,
+html.luogudark-active .sidebar-nav .active,
+html.luogudark-active .side-menu .active {
+  background-color: var(--ld-accent-dim) !important;
+  color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 22: Contest Panels & Standings
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .contest-panel,
+html.luogudark-active .contest-table,
+html.luogudark-active .contest-standings {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .contest-info {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 23: Submission Status Colors
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .status-ac,
+html.luogudark-active .lfe-caption.text-ac,
+html.luogudark-active [data-status="ac"] {
+  color: var(--ld-success) !important;
+}
+
+html.luogudark-active .status-wa,
+html.luogudark-active .lfe-caption.text-wa,
+html.luogudark-active [data-status="wa"] {
+  color: var(--ld-danger) !important;
+}
+
+html.luogudark-active .status-tle,
+html.luogudark-active .lfe-caption.text-tle,
+html.luogudark-active [data-status="tle"] {
+  color: var(--ld-warning) !important;
+}
+
+html.luogudark-active .status-mle,
+html.luogudark-active .lfe-caption.text-mle {
+  color: var(--ld-warning) !important;
+}
+
+html.luogudark-active .status-re,
+html.luogudark-active .lfe-caption.text-re,
+html.luogudark-active [data-status="re"] {
+  color: #c586c0 !important;
+}
+
+html.luogudark-active .status-ce,
+html.luogudark-active .lfe-caption.text-ce {
+  color: var(--ld-warning) !important;
+}
+
+html.luogudark-active .status-pending,
+html.luogudark-active .lfe-caption.text-pending {
+  color: var(--ld-text-muted) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 24: Record & Submission Table
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .record-table,
+html.luogudark-active .submission-list {
+  background-color: var(--ld-bg-card-solid) !important;
+}
+
+html.luogudark-active .record-table tr:hover,
+html.luogudark-active .submission-list tr:hover {
+  background-color: var(--ld-bg-hover) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 25: Training & Path Modules
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .training-list,
+html.luogudark-active .training-detail,
+html.luogudark-active .path-card {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 26: Problem Set & Tag Lists
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .problem-list,
+html.luogudark-active .problem-list-item {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .problem-list-item:hover {
+  background-color: var(--ld-bg-hover) !important;
+}
+
+html.luogudark-active .tag-list {
+  background-color: var(--ld-bg-card-solid) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 27: IDE Mode & Code Editor Container
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .ide-panel,
+html.luogudark-active .ide-container,
+html.luogudark-active .code-editor-container,
+html.luogudark-active .lfe-ide {
+  background-color: var(--ld-bg-deepest) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .ide-toolbar,
+html.luogudark-active .editor-toolbar {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .ide-output,
+html.luogudark-active .ide-result,
+html.luogudark-active .output-panel {
+  background-color: var(--ld-bg-code) !important;
+  color: var(--ld-text-primary) !important;
+  border-color: var(--ld-border) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 28: Resizer / Split Pane Handles
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .gutter,
+html.luogudark-active .split-pane-divider,
+html.luogudark-active .resize-handle {
+  background-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .gutter:hover,
+html.luogudark-active .resize-handle:hover {
+  background-color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 29: Footer
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active footer,
+html.luogudark-active .lfe-footer,
+html.luogudark-active .footer {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-top: 1px solid var(--ld-border) !important;
+  color: var(--ld-text-muted) !important;
+}
+
+html.luogudark-active footer a,
+html.luogudark-active .lfe-footer a {
+  color: var(--ld-text-secondary) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 30: Tabs & Tab Navigation
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .tab-bar,
+html.luogudark-active .tabs,
+html.luogudark-active .lfe-tabs {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .tab-item,
+html.luogudark-active .tab-bar a,
+html.luogudark-active .lfe-tabs a {
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .tab-item.active,
+html.luogudark-active .tab-bar a.active,
+html.luogudark-active .lfe-tabs a.active,
+html.luogudark-active .tab-item:hover {
+  color: var(--ld-accent) !important;
+  border-bottom-color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 31: Progress Bars & Score Indicators
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .progress,
+html.luogudark-active .progress-bar-bg,
+html.luogudark-active .am-progress {
+  background-color: var(--ld-bg-elevated) !important;
+}
+
+html.luogudark-active .progress-bar,
+html.luogudark-active .am-progress-bar {
+  background-color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 32: Checkbox, Radio & Toggle Controls
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active input[type="checkbox"],
+html.luogudark-active input[type="radio"] {
+  accent-color: var(--ld-accent) !important;
+}
+
+html.luogudark-active .switch,
+html.luogudark-active .toggle {
+  background-color: var(--ld-bg-elevated) !important;
+  border-color: var(--ld-border) !important;
+}
+
+html.luogudark-active .switch.active,
+html.luogudark-active .toggle.active {
+  background-color: var(--ld-accent) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 33: Image & Avatar Adjustments
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active img.avatar,
+html.luogudark-active .user-avatar,
+html.luogudark-active .am-comment-avatar img {
+  border: 2px solid var(--ld-border) !important;
+  border-radius: 50% !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 34: Miscellaneous Catch-All Overrides
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Kill any stray white backgrounds from Luogu's Vue-injected inline styles */
+html.luogudark-active [style*="background-color: rgb(255, 255, 255)"],
+html.luogudark-active [style*="background-color: white"],
+html.luogudark-active [style*="background: white"],
+html.luogudark-active [style*="background: rgb(255, 255, 255)"],
+html.luogudark-active [style*="background-color:#fff"],
+html.luogudark-active [style*="background:#fff"] {
+  background-color: var(--ld-bg-card-solid) !important;
+}
+
+/* Dividers & Panel Dividers */
+html.luogudark-active .divider,
+html.luogudark-active .separator,
+html.luogudark-active .panel-divider,
+html.luogudark-active .panel-divider.with-icon {
+  background-color: var(--ld-bg-card-solid) !important;
+  border-color: var(--ld-border) !important;
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .panel-divider::before,
+html.luogudark-active .panel-divider::after,
+html.luogudark-active .panel-divider.with-icon::before,
+html.luogudark-active .panel-divider.with-icon::after {
+  background-color: var(--ld-border) !important;
+  border-color: var(--ld-border) !important;
+}
+
+/* Luogu Modern Color Framework Overrides (Profile & Vue Frontend Pages) */
+html.luogudark-active .lcolor-bg-background,
+html.luogudark-active .lcolor-bg-background.main,
+html.luogudark-active .lcolor-bg-page,
+html.luogudark-active .lcolor-bg-main,
+html.luogudark-active [class*="lcolor-bg-background"] {
+  background-color: var(--ld-bg-base) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .lcolor-bg-card,
+html.luogudark-active .lcolor-bg-container,
+html.luogudark-active [class*="lcolor-bg-card"] {
+  background-color: var(--ld-bg-card-solid) !important;
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .lcolor-bg-elevated,
+html.luogudark-active [class*="lcolor-bg-elevated"] {
+  background-color: var(--ld-bg-elevated) !important;
+}
+
+html.luogudark-active .lcolor-text-default,
+html.luogudark-active .lcolor-text-primary,
+html.luogudark-active [class*="lcolor-text-default"] {
+  color: var(--ld-text-primary) !important;
+}
+
+html.luogudark-active .lcolor-text-secondary,
+html.luogudark-active .lcolor-text-muted,
+html.luogudark-active [class*="lcolor-text-secondary"] {
+  color: var(--ld-text-secondary) !important;
+}
+
+html.luogudark-active .lcolor-border,
+html.luogudark-active [class*="lcolor-border"] {
+  border-color: var(--ld-border) !important;
+}
+
+/* Selection highlight */
+html.luogudark-active ::selection {
+  background-color: rgba(82, 196, 26, 0.3) !important;
+  color: var(--ld-text-heading) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 35: Wrapper & Full-Width Layout Containers
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .wrapper,
+html.luogudark-active .wrapped,
+html.luogudark-active .container,
+html.luogudark-active .content-wrapper,
+html.luogudark-active .page-wrapper {
+  background-color: var(--ld-bg-base) !important;
+}
+
+html.luogudark-active .wrapper.wrapped {
+  background-color: var(--ld-bg-base) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 36: Action Ball — Liquid Drop Edge-Gesture IDE Toggle
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Gooey Wrapper ──────────────────────────────────────────────────────
+   Container for both the anchor blob (stuck to edge) and the action ball.
+   The SVG gooey filter is applied here so both elements merge like liquid. */
+
+.luogudark-gooey-wrap {
+  position: fixed !important;
+  right: -24px !important;
+  width: 140px !important;
+  height: 140px !important;
+  z-index: 2147483640 !important;
+  pointer-events: none !important;
+  filter: url(#luogudark-gooey) !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: opacity, filter !important;
+}
+
+.luogudark-gooey-wrap.active {
+  opacity: 1 !important;
+}
+
+/* ── Anchor Blob ────────────────────────────────────────────────────────
+   A pill/circle stuck to the right edge. The gooey filter fuses it with
+   the action ball, creating the "liquid bridge" between edge and ball.   */
+
+.luogudark-anchor-blob {
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) scale(1) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: var(--action-color, #3498db) !important;
+  will-change: transform !important;
+  transition: none !important;
+}
+
+/* ── Action Ball (the drop) ─────────────────────────────────────────────
+   The main circle that peels away from the edge as charge progresses.
+   Starts overlapping the anchor blob (fused via gooey), then separates. */
+
+.luogudark-action-ball {
+  --action-color: #3498db;
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  margin-top: -24px !important;
+  border-radius: 50% !important;
+  background: var(--action-color) !important;
+  transform: scale(0) !important;
+  opacity: 0 !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.2s ease !important;
+  will-change: transform, opacity !important;
+}
+
+/* Visible hint state — small pulsing ball, still merged with anchor */
+.luogudark-action-ball.visible {
+  opacity: 1 !important;
+  transform: scale(0.5) !important;
+  animation: luogudark-ball-breathe 1.2s ease-in-out infinite !important;
+}
+
+/* Charging state — ball grows, peels away from edge, strong glow */
+.luogudark-action-ball.charging {
+  opacity: 1 !important;
+  /* scale is driven by JS inline style for real-time progress */
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes luogudark-ball-breathe {
+  0%, 100% { transform: scale(0.5); opacity: 0.6; }
+  50%      { transform: scale(0.65); opacity: 1.0; }
+}
+
+/* ── After-glow ring on charge complete ─────────────────────────────── */
+.luogudark-action-ball.pop {
+  animation: luogudark-ball-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+@keyframes luogudark-ball-pop {
+  0%   { transform: scale(2.2); opacity: 1; }
+  50%  { transform: scale(2.6); opacity: 0.6; }
+  100% { transform: scale(0);   opacity: 0; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   END OF STYLESHEET
+   ══════════════════════════════════════════════════════════════════════════ */

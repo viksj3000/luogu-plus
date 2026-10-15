@@ -1,0 +1,421 @@
+/* ==========================================================================
+   LuoguDark — codemirror-dark.css
+   VS Code Dark 2026 Syntax Engine
+   Targets: CodeMirror 5, CodeMirror 6 (Koppa ͼ classes), Markdown code blocks
+   ========================================================================== */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 1: CodeMirror Editor Chrome
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .CodeMirror,
+html.luogudark-active .cm-s-default,
+html.luogudark-active .cm-editor {
+  background-color: #121214 !important;
+  color: #d4d4d4 !important;
+  font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas", monospace !important;
+}
+
+/* Gutters */
+html.luogudark-active .CodeMirror-gutters,
+html.luogudark-active .cm-editor .cm-gutters {
+  background-color: #121214 !important;
+  border-right: 1px solid #27272a !important;
+  color: #858585 !important;
+}
+
+html.luogudark-active .CodeMirror-linenumber,
+html.luogudark-active .cm-editor .cm-lineNumbers .cm-gutterElement {
+  color: #858585 !important;
+}
+
+/* Active Line */
+html.luogudark-active .CodeMirror-activeline-background,
+html.luogudark-active .cm-editor .cm-activeLine {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+html.luogudark-active .CodeMirror-activeline-gutter .CodeMirror-linenumber,
+html.luogudark-active .cm-editor .cm-activeLineGutter {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #c6c6c6 !important;
+}
+
+/* Cursor */
+html.luogudark-active .CodeMirror-cursor,
+html.luogudark-active .cm-editor .cm-cursor,
+html.luogudark-active .cm-editor .cm-cursor-primary {
+  border-left-color: #aeafad !important;
+}
+
+/* Selection */
+html.luogudark-active .CodeMirror-selected,
+html.luogudark-active .CodeMirror-focused .CodeMirror-selected,
+html.luogudark-active .cm-editor .cm-selectionBackground,
+html.luogudark-active .cm-editor .cm-selectionMatch {
+  background-color: rgba(82, 196, 26, 0.18) !important;
+}
+
+html.luogudark-active .cm-editor ::selection {
+  background-color: rgba(82, 196, 26, 0.25) !important;
+}
+
+/* Matching Brackets */
+html.luogudark-active .CodeMirror-matchingbracket,
+html.luogudark-active .cm-editor .cm-matchingBracket {
+  background-color: rgba(82, 196, 26, 0.25) !important;
+  color: #ffffff !important;
+  outline: 1px solid rgba(82, 196, 26, 0.4) !important;
+}
+
+html.luogudark-active .CodeMirror-nonmatchingbracket {
+  background-color: rgba(244, 135, 113, 0.25) !important;
+  color: var(--ld-danger) !important;
+}
+
+/* Scrollbar inside editor */
+html.luogudark-active .CodeMirror-vscrollbar,
+html.luogudark-active .CodeMirror-hscrollbar {
+  background: transparent !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 2: CodeMirror 5 Token Colors — VS Code Dark 2026
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Functions & Method Calls — VS Code Yellow */
+html.luogudark-active .cm-def,
+html.luogudark-active .cm-s-default .cm-def,
+html.luogudark-active .tok-function {
+  color: #dcdcaa !important;
+}
+
+/* Variables & Properties — Light Cyan */
+html.luogudark-active .cm-variable,
+html.luogudark-active .cm-variable-2,
+html.luogudark-active .cm-variable-3,
+html.luogudark-active .cm-s-default .cm-variable,
+html.luogudark-active .cm-s-default .cm-variable-2,
+html.luogudark-active .cm-property,
+html.luogudark-active .cm-s-default .cm-property,
+html.luogudark-active .tok-variableName {
+  color: #9cdcfe !important;
+}
+
+/* Keywords — VS Code Blue */
+html.luogudark-active .cm-keyword,
+html.luogudark-active .cm-s-default .cm-keyword,
+html.luogudark-active .cm-builtin,
+html.luogudark-active .cm-s-default .cm-builtin,
+html.luogudark-active .tok-keyword {
+  color: #569cd6 !important;
+}
+
+/* Types & Class Names — Mint Teal */
+html.luogudark-active .cm-type,
+html.luogudark-active .cm-s-default .cm-type,
+html.luogudark-active .cm-callee,
+html.luogudark-active .tok-className,
+html.luogudark-active .tok-typeName {
+  color: #4ec9b0 !important;
+}
+
+/* Strings — Terracotta */
+html.luogudark-active .cm-string,
+html.luogudark-active .cm-string-2,
+html.luogudark-active .cm-s-default .cm-string,
+html.luogudark-active .cm-s-default .cm-string-2,
+html.luogudark-active .tok-string {
+  color: #ce9178 !important;
+}
+
+/* Numbers — Sage Green */
+html.luogudark-active .cm-number,
+html.luogudark-active .cm-s-default .cm-number,
+html.luogudark-active .tok-number {
+  color: #b5cea8 !important;
+}
+
+/* Preprocessor / Meta — Purple */
+html.luogudark-active .cm-meta,
+html.luogudark-active .cm-s-default .cm-meta,
+html.luogudark-active .cm-qualifier,
+html.luogudark-active .tok-meta {
+  color: #c586c0 !important;
+}
+
+/* Comments — Emerald Green */
+html.luogudark-active .cm-comment,
+html.luogudark-active .cm-s-default .cm-comment,
+html.luogudark-active .tok-comment {
+  color: #6a9955 !important;
+  font-style: italic !important;
+}
+
+/* Operators & Punctuation — Light Gray */
+html.luogudark-active .cm-operator,
+html.luogudark-active .cm-s-default .cm-operator,
+html.luogudark-active .tok-operator,
+html.luogudark-active .cm-bracket,
+html.luogudark-active .tok-punctuation {
+  color: #eff1f6 !important;
+}
+
+/* Atoms / Constants */
+html.luogudark-active .cm-atom,
+html.luogudark-active .cm-s-default .cm-atom,
+html.luogudark-active .tok-bool {
+  color: #569cd6 !important;
+}
+
+/* Tags (for HTML/XML inside markdown) */
+html.luogudark-active .cm-tag,
+html.luogudark-active .cm-s-default .cm-tag,
+html.luogudark-active .tok-tagName {
+  color: #569cd6 !important;
+}
+
+/* Attributes */
+html.luogudark-active .cm-attribute,
+html.luogudark-active .cm-s-default .cm-attribute,
+html.luogudark-active .tok-attributeName {
+  color: #9cdcfe !important;
+}
+
+/* Error tokens */
+html.luogudark-active .cm-error {
+  color: #f48771 !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 3: CodeMirror 6 Koppa (ͼ) Token Overrides
+   High specificity to beat dynamically injected styles
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Functions — VS Code Yellow #dcdcaa */
+html.luogudark-active .cm-editor .cm-line span.ͼg,
+html.luogudark-active .cm-editor .cm-content span.ͼg,
+html.luogudark-active .cm-editor span.ͼg,
+html.luogudark-active span.ͼg {
+  color: #dcdcaa !important;
+}
+
+/* Variables — Light Cyan #9cdcfe */
+html.luogudark-active .cm-editor .cm-line span.ͼb,
+html.luogudark-active .cm-editor .cm-content span.ͼb,
+html.luogudark-active .cm-editor span.ͼb,
+html.luogudark-active span.ͼb {
+  color: #9cdcfe !important;
+}
+
+/* Keywords — VS Code Blue #569cd6 */
+html.luogudark-active .cm-editor .cm-line span.ͼi,
+html.luogudark-active .cm-editor .cm-content span.ͼi,
+html.luogudark-active .cm-editor span.ͼi,
+html.luogudark-active span.ͼi {
+  color: #569cd6 !important;
+}
+
+/* Types / Classes — Mint Teal #4ec9b0 */
+html.luogudark-active .cm-editor .cm-line span.ͼh,
+html.luogudark-active .cm-editor .cm-content span.ͼh,
+html.luogudark-active .cm-editor span.ͼh,
+html.luogudark-active span.ͼh {
+  color: #4ec9b0 !important;
+}
+
+/* Strings — Terracotta #ce9178 */
+html.luogudark-active .cm-editor .cm-line span.ͼd,
+html.luogudark-active .cm-editor .cm-content span.ͼd,
+html.luogudark-active .cm-editor span.ͼd,
+html.luogudark-active span.ͼd {
+  color: #ce9178 !important;
+}
+
+/* Numbers — Sage Green #b5cea8 */
+html.luogudark-active .cm-editor .cm-line span.ͼe,
+html.luogudark-active .cm-editor .cm-content span.ͼe,
+html.luogudark-active .cm-editor span.ͼe,
+html.luogudark-active span.ͼe {
+  color: #b5cea8 !important;
+}
+
+/* Preprocessor — Purple #c586c0 */
+html.luogudark-active .cm-editor .cm-line span.ͼf,
+html.luogudark-active .cm-editor .cm-content span.ͼf,
+html.luogudark-active .cm-editor span.ͼf,
+html.luogudark-active span.ͼf {
+  color: #c586c0 !important;
+}
+
+/* Comments — Emerald Green #6a9955 */
+html.luogudark-active .cm-editor .cm-line span.ͼc,
+html.luogudark-active .cm-editor .cm-content span.ͼc,
+html.luogudark-active .cm-editor span.ͼc,
+html.luogudark-active span.ͼc {
+  color: #6a9955 !important;
+  font-style: italic !important;
+}
+
+/* Operators & Punctuation — Light Gray #eff1f6 */
+html.luogudark-active .cm-editor .cm-line span.ͼj,
+html.luogudark-active .cm-editor .cm-line span.ͼk,
+html.luogudark-active .cm-editor .cm-line span.ͼl,
+html.luogudark-active .cm-editor .cm-line span.ͼm,
+html.luogudark-active .cm-editor .cm-line span.ͼn,
+html.luogudark-active .cm-editor .cm-content span.ͼj,
+html.luogudark-active .cm-editor .cm-content span.ͼk,
+html.luogudark-active .cm-editor .cm-content span.ͼl,
+html.luogudark-active .cm-editor .cm-content span.ͼm,
+html.luogudark-active .cm-editor .cm-content span.ͼn,
+html.luogudark-active .cm-editor span.ͼj,
+html.luogudark-active .cm-editor span.ͼk,
+html.luogudark-active .cm-editor span.ͼl,
+html.luogudark-active .cm-editor span.ͼm,
+html.luogudark-active .cm-editor span.ͼn {
+  color: #eff1f6 !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 4: Markdown Fenced Code Blocks
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .lfe-marked pre,
+html.luogudark-active .marked pre,
+html.luogudark-active .lfe-marked-wrap pre {
+  background-color: #000000 !important;
+  color: #d4d4d4 !important;
+  border: 1px solid #1f1f1f !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+  overflow-x: auto !important;
+}
+
+html.luogudark-active .lfe-marked pre code,
+html.luogudark-active .marked pre code,
+html.luogudark-active .lfe-marked-wrap pre code {
+  background-color: transparent !important;
+  color: #d4d4d4 !important;
+  font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas", monospace !important;
+}
+
+/* Markdown code block syntax highlighting */
+html.luogudark-active .lfe-marked pre code .token.keyword,
+html.luogudark-active .lfe-marked pre code .hljs-keyword {
+  color: #569cd6 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.function,
+html.luogudark-active .lfe-marked pre code .hljs-title {
+  color: #dcdcaa !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.string,
+html.luogudark-active .lfe-marked pre code .hljs-string {
+  color: #ce9178 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.number,
+html.luogudark-active .lfe-marked pre code .hljs-number {
+  color: #b5cea8 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.comment,
+html.luogudark-active .lfe-marked pre code .hljs-comment {
+  color: #6a9955 !important;
+  font-style: italic !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.operator,
+html.luogudark-active .lfe-marked pre code .hljs-operator {
+  color: #eff1f6 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.type,
+html.luogudark-active .lfe-marked pre code .hljs-type,
+html.luogudark-active .lfe-marked pre code .hljs-built_in {
+  color: #4ec9b0 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.preprocessor,
+html.luogudark-active .lfe-marked pre code .hljs-meta {
+  color: #c586c0 !important;
+}
+
+html.luogudark-active .lfe-marked pre code .token.variable,
+html.luogudark-active .lfe-marked pre code .hljs-variable {
+  color: #9cdcfe !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 5: CodeMirror Editor Panels, Tooltips & Autocomplete
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .cm-editor .cm-tooltip,
+html.luogudark-active .cm-editor .cm-tooltip-autocomplete {
+  background-color: #0a0a0a !important;
+  border: 1px solid #1f1f1f !important;
+  color: #d4d4d4 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.luogudark-active .cm-editor .cm-tooltip-autocomplete > ul > li {
+  color: #d4d4d4 !important;
+}
+
+html.luogudark-active .cm-editor .cm-tooltip-autocomplete > ul > li[aria-selected] {
+  background-color: rgba(82, 196, 26, 0.18) !important;
+  color: #ffffff !important;
+}
+
+html.luogudark-active .cm-editor .cm-panels,
+html.luogudark-active .cm-editor .cm-panel {
+  background-color: #0a0a0a !important;
+  border-color: #1f1f1f !important;
+  color: #d4d4d4 !important;
+}
+
+html.luogudark-active .cm-editor .cm-panel input,
+html.luogudark-active .cm-editor .cm-panel button {
+  background-color: #121212 !important;
+  color: #d4d4d4 !important;
+  border: 1px solid #1f1f1f !important;
+}
+
+html.luogudark-active .cm-editor .cm-searchMatch {
+  background-color: rgba(204, 167, 0, 0.25) !important;
+  outline: 1px solid rgba(204, 167, 0, 0.5) !important;
+}
+
+html.luogudark-active .cm-editor .cm-searchMatch-selected {
+  background-color: rgba(82, 196, 26, 0.3) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION 6: Fold Gutters & Widget Markers
+   ══════════════════════════════════════════════════════════════════════════ */
+
+html.luogudark-active .cm-editor .cm-foldGutter .cm-gutterElement {
+  color: #858585 !important;
+}
+
+html.luogudark-active .cm-editor .cm-foldGutter .cm-gutterElement:hover {
+  color: #d4d4d4 !important;
+}
+
+html.luogudark-active .cm-editor .cm-foldPlaceholder {
+  background-color: #121212 !important;
+  border: 1px solid #1f1f1f !important;
+  color: #858585 !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   END OF CODEMIRROR STYLESHEET
+   ══════════════════════════════════════════════════════════════════════════ */

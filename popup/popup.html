@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuoguDark</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="logo-row">
+        <img src="../image.png" alt="LuoguDark" class="logo-icon">
+        <div class="title-block">
+          <h1>LuoguDark</h1>
+          <span class="subtitle">Pure OLED Black Theme</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Controls -->
+    <div class="popup-body">
+      <!-- Theme Toggle -->
+      <div class="control-row">
+        <span class="control-label">Dark Mode</span>
+        <label class="switch" for="theme-toggle">
+          <input type="checkbox" id="theme-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Brightness Slider -->
+      <div class="control-row slider-row">
+        <div class="slider-header">
+          <span class="control-label">Brightness</span>
+          <span class="slider-value" id="brightness-val">100%</span>
+        </div>
+        <input type="range" id="brightness-slider" min="50" max="100" value="100" step="1">
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Reset Button -->
+      <button id="reset-btn" class="reset-button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        Reset to Defaults
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <span class="shortcut-hint">Toggle: <kbd>Ctrl</kbd> + <kbd>I</kbd></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

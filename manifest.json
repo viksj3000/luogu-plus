@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "LuoguDark",
+  "version": "1.0.0",
+  "description": "Premium Pure Pitch OLED Black dark theme for Luogu (洛谷) with VS Code Dark 2026 syntax highlighting, real-time cross-tab sync, and zero white flash.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["*://*.luogu.com.cn/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.luogu.com.cn/*"],
+      "css": ["styles/luogu-dark.css", "styles/codemirror-dark.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
